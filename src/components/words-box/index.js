@@ -15,8 +15,8 @@ const WordsBox = () => {
   }
   return (
     <Wrapper>
-      {RowData.map((data) => (
-        <WordRow data={data} />
+      {RowData.map((data, index) => (
+        <WordRow key={`${index}-wordRow`} data={data} />
       ))}
     </Wrapper>
   );

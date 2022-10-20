@@ -11,12 +11,12 @@ const WordRow = ({ data }) => {
   }
   return (
     <Wrapper>
-      {words.map((word) => {
+      {words.map((word, index) => {
         if (typeof word === "object") {
           const { guess, result } = word;
-          return <WordBox guess={guess} result={result} />;
+          return <WordBox key={`${index}-wordBox`} guess={guess} result={result} />;
         } else {
-          return <WordBox guess={word} />;
+          return <WordBox key={`${index}-wordBox`} guess={word} />;
         }
       })}
     </Wrapper>
@@ -30,10 +30,10 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-export default memo(WordRow, function(prevProps, nextProps) {
-  if(nextProps.data.calledApi) {
-    return true
+export default memo(WordRow, function (prevProps, nextProps) {
+  if (nextProps.data.calledApi) {
+    return true;
   } else {
-    return false
+    return false;
   }
 });
