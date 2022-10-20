@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "simple-keyboard/build/css/index.css";
+import KeyboardBox from "./components/keyboards";
+import WordsBox from "./components/words-box";
+import "antd/dist/antd.css";
+import PlayAgainBox from "./components/play-again-box";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PlayAgainBox />
+      <WordsBox />
+      <KeyboardBox />
     </div>
   );
 }
